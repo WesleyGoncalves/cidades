@@ -1,0 +1,48 @@
+# Data
+data/data.js
+
+# Production
+.htaccess
+tmp
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+.pnpm-debug.log
+
+# Environment variables
+.env
+.env*.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.code-workspace
+
+# Build artifacts
+dist/
+build/
+*.js.map
+*.d.ts
+
+# Testing
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+/src/generated/prisma

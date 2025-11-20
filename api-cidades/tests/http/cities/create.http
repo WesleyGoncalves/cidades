@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/cities HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Java",
+    "population": 900000,
+    "latitude": -6.2088,
+    "longitude": 106.8456,
+    "countryId": 2
+}

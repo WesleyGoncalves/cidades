@@ -1,0 +1,95 @@
+const countries = [
+  {
+    name: "Brazil",
+    description: "A large country in South America",
+    population: 211000000,
+    officialLanguage: "Portuguese",
+    currency: "BRL",
+    continentId: 5,
+  },
+  {
+    name: "Canada",
+    description: "A country in North America",
+    population: 37590000,
+    officialLanguage: "English and French",
+    currency: "CAD",
+    continentId: 6,
+  },
+  {
+    name: "Japan",
+    description: "An island country in East Asia",
+    population: 126300000,
+    officialLanguage: "Japanese",
+    currency: "JPY",
+    continentId: 3,
+  },
+  {
+    name: "Australia",
+    description:
+      "A country and continent surrounded by the Indian and Pacific oceans",
+    population: 25690000,
+    officialLanguage: "English",
+    currency: "AUD",
+    continentId: 4,
+  },
+  {
+    name: "Germany",
+    description: "A country in Central Europe",
+    population: 83020000,
+    officialLanguage: "German",
+    currency: "EUR",
+    continentId: 2,
+  },
+  {
+    name: "South Africa",
+    description: "A country located at the southern tip of Africa",
+    population: 59300000,
+    officialLanguage:
+      "11 official languages including Zulu, Xhosa, and Afrikaans",
+    currency: "ZAR",
+    continentId: 1,
+  },
+  {
+    name: "Argentina",
+    description: "A country in South America known for its diverse landscapes",
+    population: 44940000,
+    officialLanguage: "Spanish",
+    currency: "ARS",
+    continentId: 5,
+  },
+  {
+    name: "Egypt",
+    description: "A country linking northeast Africa with the Middle East",
+    population: 100400000,
+    officialLanguage: "Arabic",
+    currency: "EGP",
+    continentId: 1,
+  },
+  {
+    name: "India",
+    description: "A country in South Asia with diverse cultures and languages",
+    population: 1380004000,
+    officialLanguage: "Hindi and English",
+    currency: "INR",
+    continentId: 3,
+  },
+  {
+    name: "France",
+    description:
+      "A country in Western Europe known for its art, fashion, and culture",
+    population: 67060000,
+    officialLanguage: "French",
+    currency: "EUR",
+    continentId: 2,
+  },
+  {
+    name: "China",
+    description: "The most populous country in the world, located in East Asia",
+    population: 1393000000,
+    officialLanguage: "Mandarin",
+    currency: "CNY",
+    continentId: 3,
+  },
+];
+
+export default countries;
