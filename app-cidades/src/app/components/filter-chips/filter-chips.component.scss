@@ -1,0 +1,17 @@
+@use "@angular/material" as mat;
+@use "variables" as var;
+
+.remove-border {
+  width: 100%;
+
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-width: 0px,
+      outlined-focus-outline-width: 0px,
+    )
+  );
+}
+
+mat-chip-grid {
+  margin-top: calc(var.$spacing/2);
+}

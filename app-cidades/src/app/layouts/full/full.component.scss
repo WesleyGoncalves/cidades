@@ -1,0 +1,14 @@
+@use "variables" as var;
+
+mat-sidenav {
+}
+
+mat-sidenav-content {
+  padding: var.$spacing;
+}
+
+.action {
+  position: absolute;
+  margin-right: var.$spacing;
+  right: 0;
+}

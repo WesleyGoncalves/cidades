@@ -1,0 +1,31 @@
+<mat-form-field appearance="outline" class="remove-border">
+  <!-- <mat-label>Favorite Fruits</mat-label> -->
+  <input
+    name="current"
+    [placeholder]="placeholder()"
+    #myInput
+    [(ngModel)]="current"
+    [matChipInputFor]="chipGrid"
+    [matAutocomplete]="auto"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    (matChipInputTokenEnd)="add($event)"
+  />
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (optionSelected)="selected($event); myInput.value = ''"
+  >
+    @for (entry of filteredData(); track entry) {
+    <mat-option [value]="entry">{{ entry }}</mat-option>
+    }
+  </mat-autocomplete>
+  <mat-chip-grid #chipGrid>
+    @for (entry of data(); track $index) {
+    <mat-chip-row (removed)="remove(entry)">
+      {{ entry }}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+    }
+  </mat-chip-grid>
+</mat-form-field>

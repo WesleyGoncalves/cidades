@@ -1,0 +1,47 @@
+@use "variables" as var;
+
+.bar {
+  margin-bottom: var.$spacing;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5;
+  justify-content: space-between;
+  align-items: stretch;
+
+  & > * {
+    flex: 1;
+    margin: var.$spacing;
+  }
+}
+
+mat-card {
+  min-width: 240px;
+
+  mat-card-subtitle {
+    margin-top: calc(var.$spacing / 2);
+  }
+
+  mat-card-content {
+    padding-top: var.$spacing;
+    display: flex;
+    gap: var.$spacing;
+    flex-wrap: wrap;
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      gap: calc(var.$spacing / 2);
+      align-items: center;
+      cursor: default;
+    }
+  }
+}

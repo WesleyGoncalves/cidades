@@ -1,0 +1,40 @@
+<div class="bar">
+  <h1 class="mat-h1">Continents</h1>
+
+  <div class="actions">
+    <button matButton="filled" (click)="openDialog()">
+      <mat-icon fontIcon="add"></mat-icon>
+      Add
+    </button>
+  </div>
+</div>
+
+<div class="container">
+  @if (continentsService.continents$().length === 0) {
+  <p>No continents available.</p>
+  } @for (continent of continentsService.continents$(); track $index) {
+  <mat-card appearance="outlined">
+    <!-- <img
+        mat-card-image
+        src="https://material.angular.dev/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      /> -->
+    <mat-card-header>
+      <mat-card-title> {{ continent.name }} </mat-card-title>
+      <mat-card-subtitle> {{ continent.description }} </mat-card-subtitle>
+    </mat-card-header>
+    <!-- <mat-card-content> </mat-card-content> -->
+    <mat-card-actions align="end">
+      <button mat-icon-button (click)="openDialog(continent)">
+        <mat-icon fontIcon="edit"></mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon
+          fontIcon="delete"
+          (click)="continentsService.delete(continent.id)"
+        ></mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>

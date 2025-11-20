@@ -1,0 +1,65 @@
+<div class="bar">
+  <h1 class="mat-h1">Countries</h1>
+
+  <div class="actions">
+    <button matButton="filled" (click)="openDialog()">
+      <mat-icon fontIcon="add"></mat-icon>
+      Add
+    </button>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <app-filter-chips
+    [list]="continentNames()"
+    placeholder="Filter by Continents..."
+    (change)="onFilterChange($event)"
+  ></app-filter-chips>
+</div>
+
+<div class="container">
+  @if (countries().length === 0) {
+  <p>No countries available.</p>
+  } @for (country of countries(); track $index) {
+  <mat-card appearance="outlined">
+    <!-- <img
+        mat-card-image
+        src="https://material.angular.dev/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      /> -->
+    <mat-card-header>
+      <mat-card-title> {{ country.name }} </mat-card-title>
+      <mat-card-subtitle> {{ country.description }} </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="info" matTooltip="Population">
+        <mat-icon fontIcon="groups"></mat-icon>
+        {{ country.population | number }} inhabitants
+      </div>
+      <div class="info" matTooltip="Official Language">
+        <mat-icon fontIcon="language"></mat-icon>
+        {{ country.officialLanguage }}
+      </div>
+      <div class="info" matTooltip="Currency">
+        <mat-icon fontIcon="attach_money"></mat-icon>
+        {{ country.currency }}
+      </div>
+      <div class="info" matTooltip="Continent">
+        <mat-icon fontIcon="public"></mat-icon>
+        {{ continentsService.getOne(country.continentId)?.name }}
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button (click)="openDialog(country)">
+        <mat-icon fontIcon="edit"></mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon
+          fontIcon="delete"
+          (click)="countriesService.delete(country.id)"
+        ></mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>
